@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
 export async function generateSpec(projectData: any) {
-  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+  const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
   
   const prompt = `
   Project Information:
@@ -32,7 +32,7 @@ export async function generateSpec(projectData: any) {
 }
 
 export async function generateArchitecture(projectData: any, spec: any) {
-  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+  const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
   
   const prompt = `
   For this project:
